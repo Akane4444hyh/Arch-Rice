@@ -1,0 +1,7 @@
+layer=top
+background-color=#d1d1fa
+text-color=#ffffff
+
+border-size=0
+border-radius=8
+default-timeout=5000
