@@ -55,6 +55,7 @@ This configuration is inspired by and based on the following projects:
 
 - Others Dotfiles I Took Inspiration From
   https://github.com/diinki/diinki-retrofuture (really help)
+  
   https://github.com/SHORiN-KiWATA/Shorin-ArchLinux-Guide
 
 ...
