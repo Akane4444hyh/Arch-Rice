@@ -9,7 +9,7 @@
   "margin-left": 300,
   "modules-left": [
     "niri/workspaces",
-    "custom/cava",
+    "custom/cava"
   ],
   "modules-center": [
     "custom/applauncher"
@@ -93,10 +93,9 @@
   "scroll-step": 5
   },
   "custom/power": {
-    "exec": "echo ' ⏻ '",          // 电源符号，你也可以换成别的图标
-    "on-click": "wlogout",       // 点击运行 wlogout
-    "tooltip": false,            // 不显示提示
-    "interval": 0                // 不需要刷新
+    "format": " ⏻ ",
+    "on-click": "/home/porlownia3333/.local/bin/niri-kde-logout",
+    "tooltip": false
   },
   "power-profiles-daemon": {
   "format": "{icon}",

@@ -4,4 +4,4 @@ text-color=#ffffff
 
 border-size=0
 border-radius=8
-default-timeout=5000
+default-timeout=3000

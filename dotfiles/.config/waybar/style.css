@@ -1,6 +1,6 @@
 * {
   /* General taskbar font, still Maple Mono */
-  font-family: Maple Mono;
+  font-family: "Maple Mono NF CN", "Maple Mono NF", "Maple Mono", "JetBrainsMono Nerd Font", monospace;
   border-radius: 20px;
   font-size: 14px;
   padding: 0px;
@@ -139,6 +139,7 @@ window#waybar {
   color: #1e1b29;                  
 }
 
+
 #power-profiles-daemon{
   font-family: Maple Mono;          
   font-size: 14px;
@@ -154,5 +155,3 @@ window#waybar {
   background-image: linear-gradient(to bottom, #b293f0 0%, #b293f0 100%);
   color: #1e1b29;                  
 }
-
-
