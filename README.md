@@ -1,5 +1,5 @@
 ## My Linux Rice
-
+QWQ
 ### Device Information
 
 - Device: Lenovo ThinkBook 16 G7+ IAH (21TL)
@@ -66,3 +66,40 @@ This configuration is inspired by and based on the following projects:
 ### Screenshots
 
 Screenshots can be found in the `screenshots/` directory.
+
+
+---
+
+### Nemo → Mako Copy Progress
+
+Copy progress notifications for Nemo on Niri / Wayland.
+
+- Progress: a thin lavender bar, percentage and file name in Mako.
+- Usage: the usual Ctrl+C / Ctrl+V, with the original Nemo interface.
+- SD cards: progress follows confirmed writes, then shows completion after syncing.
+- Scope: the percentage is for the current file; Nemo keeps its own overall progress.
+- Verified: a 1.06 GB copy with matching readback hashes, plus actual keyboard copy / paste.
+
+![Nemo copy progress in Mako](nemo-mako-progress/assets/progress.png)
+
+[Recording](nemo-mako-progress/assets/progress.mp4) · [Details and maintenance](nemo-mako-progress/README.md)
+
+Build and install from the repository root:
+
+```sh
+cd nemo-mako-progress
+sh build.sh
+sh test.sh
+python install.py
+```
+
+Restart Nemo after installation. The module uses the installed C compiler and
+GTK 3 / GLib development headers; the tests also need Python GObject bindings,
+D-Bus and a running Wayland session. The installer backs up existing user files.
+
+The existing Mako and GTK 3 dotfiles have also been updated. No new desktop
+configuration files were added. Other configs and the earlier screenshots are
+kept as they were.
+
+Frequent synchronization can make removable-drive copies a little slower.
+Use Eject before unplugging a device, even after the copy is finished.

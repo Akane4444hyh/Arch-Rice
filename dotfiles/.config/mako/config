@@ -5,3 +5,34 @@ text-color=#ffffff
 border-size=0
 border-radius=8
 default-timeout=3000
+
+# Keep Nemo's copy and unmount notices visible until dismissed.
+# The pending unmount notice is withdrawn by Nemo when the operation ends.
+[desktop-entry=org.Nemo]
+default-timeout=0
+ignore-timeout=1
+text-color=#1e1e2e
+
+
+
+# BEGIN nemo-progress
+[desktop-entry=nemo-progress]
+width=330
+height=96
+font=sans-serif 10
+padding=7,10
+background-color=#1e1e2ef5
+text-color=#cdd6f4
+border-radius=7
+border-size=1
+border-color=#45475a
+format=<b>%s</b>\n%b
+icons=1
+max-icon-size=300
+icon-location=bottom
+progress-color=over #00000000
+default-timeout=6000
+ignore-timeout=0
+history=0
+group-by=none
+# END nemo-progress
