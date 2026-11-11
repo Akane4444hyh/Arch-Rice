@@ -230,4 +230,3 @@ gboolean g_file_copy(GFile *source, GFile *destination, GFileCopyFlags flags,
     return run_operation(original, FALSE, source, destination, flags,
                          cancellable, callback, data, error);
 }
-
