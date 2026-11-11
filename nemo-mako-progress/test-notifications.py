@@ -26,8 +26,13 @@ resource.setrlimit(resource.RLIMIT_CORE, (0, 0))
 project = Path(__file__).resolve().parent
 config = project / 'build/test-mako.conf'
 config.write_text('width=330\nheight=96\nicons=1\nmax-icon-size=300\n'
+                  'background-color=#1e1e2ef5\ntext-color=#cdd6f4\n'
+                  'border-size=1\nborder-color=#45475a\nborder-radius=7\n'
                   'icon-location=bottom\nformat=<b>%s</b>\\n%b\n'
-                  'history=0\ngroup-by=none\n')
+                  'history=0\ngroup-by=none\n'
+                  # A private D-Bus session still uses the real Wayland output.
+                  # Injected copy errors must never look like user-file errors.
+                  '[app-name="Nemo Progress"]\ninvisible=1\n')
 daemon = subprocess.Popen(['/usr/bin/mako', '--config', str(config)],
                           stdout=subprocess.DEVNULL, stderr=subprocess.PIPE)
 bus = Gio.bus_get_sync(Gio.BusType.SESSION, None)

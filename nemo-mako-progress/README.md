@@ -87,6 +87,9 @@ open locations before `nemo --quit`, then reopen them with `nemo PATH`.
 overwrite/existing-file handling, cancellation, symlinks, cross-device moves,
 and injected disk synchronization errors. GLib criticals fail the test. It does
 not replace the real desktop's notification daemon or accessibility socket.
+Test notifications are invisible: the error-injection tests must not display
+fake copy failures on the real Wayland desktop. The private daemon also uses
+the same dark palette rather than Mako's default blue.
 `sh test.sh --reproduce` separately demonstrates the old Mako tag/ID bug using
 an isolated daemon.
 
