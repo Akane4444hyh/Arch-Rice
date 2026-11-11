@@ -83,15 +83,13 @@ Restart Nemo after installation. Close active file operations first; remember
 open locations before `nemo --quit`, then reopen them with `nemo PATH`.
 
 `sh test.sh` uses a separate session bus and runtime directory. It verifies
-1,000 raw-image notification replacements against real Mako, real copy contents,
-overwrite/existing-file handling, cancellation, symlinks, cross-device moves,
-and injected disk synchronization errors. GLib criticals fail the test. It does
-not replace the real desktop's notification daemon or accessibility socket.
-Test notifications are invisible: the error-injection tests must not display
-fake copy failures on the real Wayland desktop. The private daemon also uses
-the same dark palette rather than Mako's default blue.
-`sh test.sh --reproduce` separately demonstrates the old Mako tag/ID bug using
-an isolated daemon.
+real copy contents, overwrite/existing-file handling, cancellation, symlinks,
+cross-device moves and injected disk synchronization errors. GLib criticals
+fail the test. An in-memory D-Bus receiver checks the module's message format
+and completion/error outcomes; it does not create desktop notifications.
+The test runner never starts Mako or uses the real desktop's notification bus.
+The notification stress generator, test Mako configuration and crash-reproduction
+option have been removed.
 
 ## Files and maintenance
 
@@ -99,7 +97,7 @@ an isolated daemon.
   writes and final synchronization; cancellation/error behavior stays in GIO.
 - `nemo-progress.c`, `progress.h`: thread-safe transfer state and Mako rendering.
 - `build.sh`, `install.py`: build and per-user installation.
-- `test-copy.c`, `test-sync-error.c`, `test-notifications.py`, `test.sh`: verification.
+- `test-copy.c`, `test-sync-error.c`, `test-runner.py`, `test.sh`: verification.
 - `assets/`: the cropped screenshot and recording from real Nemo.
 - `build/evidence/`: local verification logs and full desktop screenshots; ignored by Git.
 
